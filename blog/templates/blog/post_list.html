@@ -6,17 +6,12 @@
         <div>
             <h1><a href="">Blogs are fun times</a></h1>
         </div>
-
+        {% for post in posts%}
         <div>
-            <p>published: 21.05.2017, 18:33</p>
-            <h2><a href="">A brave new world</a></h2>
-            <p>A SQUAT grey building of only thirty-four stories. Over the main entrance the words, CENTRAL LONDON HATCHERY AND CONDITIONING CENTRE, and, in a shield, the World State's motto, COMMUNITY, IDENTITY, STABILITY.</p>
-        </div>
-
-        <div>
-            <p>published: 21.05.2017, 18:34</p>
-            <h2><a href="">Jekyll is cool too</a></h2>
-            <p>Jekyll is a simple, blog-aware, static site generator.</p>
-        </div>
+          <p>published: {{ post.published_date }}</p>
+          <h1><a href="">{{ post.title }}</a></h1>
+          <p>{{ post.text|linebreaksbr }}</p>
+         </div>
+        {% endfor %}
     </body>
 </html>
